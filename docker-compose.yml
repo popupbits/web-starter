@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+   node:
+      image: dlohani/node:react-native
+      volumes:
+        - ./:/web-project
+        - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      entrypoint: /bin/sh
+      working_dir: /web-project
+      ports:
+        - "8080:8080"
+      container_name: simple-web-starter
+      restart: restart
